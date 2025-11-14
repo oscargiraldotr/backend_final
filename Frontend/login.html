@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Tikets Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #1f2937, #111827);
+      font-family: 'Poppins', sans-serif;
+      color: #f9fafb;
+    }
+
+    .login-container {
+      background: #ffffff10;
+      backdrop-filter: blur(8px);
+      padding: 2.5rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 420px;
+      transition: transform 0.3s ease;
+    }
+
+    .login-container:hover {
+      transform: translateY(-4px);
+    }
+
+    .login-title {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    label {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #e5e7eb;
+    }
+
+    input {
+      padding: 0.8rem;
+      border-radius: 0.75rem;
+      border: none;
+      background-color: #374151;
+      color: #f9fafb;
+      font-size: 1rem;
+      outline: none;
+      transition: background 0.2s;
+    }
+
+    input:focus {
+      background-color: #4b5563;
+    }
+
+    button {
+      padding: 0.9rem;
+      background: linear-gradient(90deg, #10b981, #059669);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 0.75rem;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(90deg, #34d399, #059669);
+      transform: scale(1.02);
+    }
+
+    .login-footer {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: #9ca3af;
+    }
+
+    .login-footer a {
+      color: #10b981;
+      text-decoration: none;
+    }
+
+    .login-footer a:hover {
+      text-decoration: underline;
+    }
+
+    .error {
+      color: #f87171;
+      background: rgba(239, 68, 68, 0.1);
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.5rem;
+      font-size: 0.9rem;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h1 class="login-title">Tikets Dashboard</h1>
+    <form id="loginForm">
+      <label for="email">Correo electrónico</label>
+      <input type="email" id="email" name="email" placeholder="admin@tikets.com" required />
+
+      <label for="password">Contraseña</label>
+      <input type="password" id="password" name="password" placeholder="••••••••" required />
+
+      <div class="error" id="loginError">Credenciales inválidas</div>
+
+      <button type="submit">Iniciar sesión</button>
+    </form>
+
+    <div class="login-footer">
+      <p>¿Olvidaste tu contraseña? <a href="#">Recuperar</a></p>
+    </div>
+  </div>
+
+  <script src="../Backend/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle del Ticket | Tikets</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>🧾 Detalle del Ticket</h1>
+      <p>Consulta la información completa y gestiona el estado del caso.</p>
+    </header>
+
+    <section class="card flex flex-col gap-4">
+      <h2 id="ticketId">Ticket: TKT-2025-001</h2>
+      <p><strong>Cliente:</strong> Carlos Pérez</p>
+      <p><strong>Correo:</strong> carlos@example.com</p>
+      <p><strong>Estado actual:</strong> <span id="ticketStatus" class="status revision">En revisión</span></p>
+
+      <div class="flex flex-col gap-2">
+        <h3>Historial de mensajes</h3>
+        <div id="history" class="flex flex-col gap-2">
+          <div class="message cliente">Cliente: Envié la documentación requerida.</div>
+          <div class="message vendedor">Admin: Gracias, estamos procesando la información.</div>
+          <div class="message sistema">Estado cambiado a En revisión.</div>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-4">
+        <label for="newMessage">Responder al cliente</label>
+        <textarea id="newMessage" rows="3" placeholder="Escribe una respuesta..."></textarea>
+        <button id="sendMsg" class="btn">Enviar respuesta</button>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <label for="estado">Cambiar estado</label>
+        <select id="estado">
+          <option value="enviado">Enviado</option>
+          <option value="revision" selected>En revisión</option>
+          <option value="resolucion">En resolución</option>
+          <option value="cerrado">Cerrado</option>
+        </select>
+      </div>
+      <button id="updateEstado" class="btn btn-secondary">Actualizar estado</button>
+    </section>
+
+    <footer>
+      <p>© 2025 Tikets — Oscar Giraldo</a></p>
+    </footer>
+  </main>
+
+  <script src="../Backend/script.js"></script>
+
+</body>
+</html>

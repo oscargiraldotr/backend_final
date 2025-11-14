@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tikets | Quejas y Reclamos</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main>
+    <header>
+      <h1>🎟️ Tikets</h1>
+      <p>Gestión de Quejas, Reclamos y PQRS</p>
+    </header>
+
+    <!-- Contenedor principal con dos columnas -->
+    <section class="grid-cols-2">
+      
+      <!-- Columna izquierda: formulario para crear ticket -->
+      <div class="card flex flex-col gap-4">
+        <h2>📝 Crear nuevo ticket</h2>
+        <p>Registra tu queja o reclamo. Recibirás un número de seguimiento por correo electrónico.</p>
+        
+        <form id="ticketForm" enctype="multipart/form-data" class="flex flex-col gap-4">
+          <div>
+            <label>Nombre completo</label>
+            <input type="text" name="nombre" required />
+          </div>
+          <div>
+            <label>Cédula / Identificación</label>
+            <input type="text" name="cedula" required />
+          </div>
+          <div>
+            <label>Correo electrónico</label>
+            <input type="email" name="correo" required />
+          </div>
+          <div>
+            <label>Teléfono</label>
+            <input type="tel" name="telefono" />
+          </div>
+          <div>
+            <label>Queja o reclamo</label>
+            <textarea name="descripcion" rows="4" placeholder="Describe tu solicitud..." required></textarea>
+          </div>
+          <div>
+            <label>Adjuntar imágenes o documentos (opcional)</label>
+            <input type="file" name="archivos" multiple />
+          </div>
+          
+          <button type="submit" class="btn">Enviar ticket</button>
+        </form>
+
+        <div id="ticketResult" class="p-4" style="display:none;">
+          <p><strong>✅ Ticket generado:</strong> <span id="ticketNumber"></span></p>
+          <p>Revisa tu correo para ver los detalles y seguir su estado.</p>
+        </div>
+      </div>
+
+      <!-- Columna derecha: consulta de ticket -->
+      <div class="card flex flex-col gap-4">
+        <h2>🔍 Consultar estado del ticket</h2>
+        <p>Ingresa el número de ticket que recibiste por correo para ver su estado.</p>
+
+        <form id="consultForm" class="flex flex-col gap-4">
+          <div>
+            <label>Número de ticket</label>
+            <input type="text" id="ticketSearch" placeholder="Ej: TKT-2025-00123" required />
+          </div>
+          <button type="submit" class="btn btn-secondary">Consultar</button>
+        </form>
+
+        <div id="ticketInfo" class="p-4" style="display:none;">
+          <h3>Detalles del ticket</h3>
+          <p><strong>Estado:</strong> <span id="ticketStatus" class="status enviado"></span></p>
+          <p><strong>Descripción:</strong></p>
+          <p id="ticketDesc"></p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 Tikets — Oscar Giraldo</a></p>
+    </footer>
+  </main>
+
+<script src="../Backend/script.js"></script>
+
+</body>
+</html>
