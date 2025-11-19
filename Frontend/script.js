@@ -153,7 +153,7 @@
    ========================================================= */
 
 // Cambiar después por la URL del backend en Render
-const API_URL = "https://mi-backend.onrender.com/api";
+const API_URL = "https://backend-repo-final.onrender.com/api";
 const currentPage = window.location.pathname.split("/").pop();
 
 /* =========================================================
