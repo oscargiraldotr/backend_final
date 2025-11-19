@@ -12,7 +12,7 @@ const path = require('path');
 mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://oscargiraldo0405_db_user:<db_password>@alma.5gic8wd.mongodb.net/?appName=Alma', {
   useNewUrlParser: true,
   useUnifiedTopology: true
-}).then(() => console.log('MongoDB conectado'))
+}).then(() => console.log('MongoDB conectados'))
   .catch(err => console.error('MongoDB error:', err));
 
 const app = express();
