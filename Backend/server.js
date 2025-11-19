@@ -5,22 +5,19 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const multer = require("multer");
 const { v4: uuidv4 } = require("uuid");
-const fs = require('fs');
-const path = require('path');
 
 // conectar MongoDB (usa MONGODB_URI de .env)
-mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://oscargiraldo0405_db_user:<db_password>@alma.5gic8wd.mongodb.net/?appName=Alma', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/tickets', {
   useNewUrlParser: true,
   useUnifiedTopology: true
-}).then(() => console.log('MongoDB conectados'))
+}).then(() => console.log('MongoDB conectado'))
   .catch(err => console.error('MongoDB error:', err));
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 // habilitar CORS (ajusta origin en producción)
-const NETLIFY_URL = process.env.FRONTEND_URL || true; // usar FRONTEND_URL en Render
-app.use(cors({ origin: NETLIFY_URL }));
+app.use(cors({ origin: true }));
 
 // Middlewares
 app.use(express.json());
@@ -29,15 +26,6 @@ app.use(express.urlencoded({ extended: true }));
 // Paths
 const BACKEND_DIR = __dirname;
 const UPLOADS_DIR = path.join(BACKEND_DIR, "uploads");
-const DB_FILE = path.join(BACKEND_DIR, 'tickets.json');
-
-// Asegurar que el directorio de uploads exista
-if (!fs.existsSync(UPLOADS_DIR)) {
-  fs.mkdirSync(UPLOADS_DIR, { recursive: true });
-}
-
-// Servir archivos estáticos de uploads
-app.use('/uploads', express.static(UPLOADS_DIR));
 
 // Multer config (campo esperado: "files")
 const storage = multer.diskStorage({
