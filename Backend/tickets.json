@@ -1,0 +1,21 @@
+[
+  {
+    "id": "0eec315e",
+    "nombre": "Jon",
+    "cedula": "1111",
+    "correo": "a@a.com",
+    "telefono": "",
+    "descripcion": "",
+    "archivos": [],
+    "estado": "enviado",
+    "fecha": "2025-11-19T15:11:34.203Z",
+    "mensajes": [
+      {
+        "autor": "Cliente",
+        "tipo": "cliente",
+        "texto": "",
+        "fecha": "2025-11-19T15:11:34.203Z"
+      }
+    ]
+  }
+]
